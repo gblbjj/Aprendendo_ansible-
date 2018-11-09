@@ -1,0 +1,11 @@
+---
+- 
+  name: play of git 
+  hosts: all 
+  tasks:
+    - name: install git 
+      yum:
+        name: git 
+        state: latest
+        update_cache: yes
+        
