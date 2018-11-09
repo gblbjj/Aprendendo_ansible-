@@ -1,0 +1,24 @@
+
+
+---
+-
+  name: play-2
+  hosts: all
+  remote_user: root
+  become: true 
+  tasks:
+    - name: install depends in centos
+      yum:
+        name: "{{ item }}"
+        state: present 
+        update_cache: yes
+      wich_items:   
+
+          - vim
+          - epel-release
+
+      when:
+          - ansible_distribution == "CentOS"
+      tags: depends 
+      register: depends_centos
+        
