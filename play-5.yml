@@ -1,0 +1,18 @@
+#instalando repositorio no centos 
+#
+#
+#
+#
+---
+- 
+  name: play-5
+  hosts: all
+  remote_user: root
+  become: true 
+  tasks:
+    - name: install os repositorio 
+      yum_repository:
+         name: epel
+         description: EPEL YUM repo
+         baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+ 

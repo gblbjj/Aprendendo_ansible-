@@ -1,0 +1,17 @@
+#add repositorio com modulos ansible   
+#
+#
+#
+---
+-
+  name: play-6
+  hosts: all
+  tasks:
+    - name: Add multiple repositories into the same file (2/2)
+      yum_repository:
+         name: rpmforge
+         description: RPMforge YUM repo
+         file: external_repos
+         baseurl: http://apt.sw.be/redhat/el7/en/$basearch/rpmforge
+         mirrorlist: http://mirrorlist.repoforge.org/el7/mirrors-rpmforge
+         enabled: no 
