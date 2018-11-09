@@ -1,0 +1,21 @@
+# instalando pacotes  atraves  do parametro vars e packages 
+#
+#
+#
+#
+#
+#
+---
+-
+  name: play-2
+  hosts: all
+  remote_user: root
+  become: true 
+  tasks:
+    - name: install depends in centos
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - httpd
+        - httpd-tools   
